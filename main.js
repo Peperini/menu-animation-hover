@@ -1,24 +1,13 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+import Cursor from './cursor'
+import { preloader } from './preloader'
+import LocomotiveScroll from 'locomotive-scroll'
+import Menu from './Menu'
 
-setupCounter(document.querySelector('#counter'))
+const menuEl = document.querySelector('.menu')
+
+preloader('.menu__item').then(() => {
+  const scroll = new LocomotiveScroll({ el: menuEl, smooth: true })
+  const cursor = new Cursor(document.querySelector('.cursor'))
+  new Menu(menuEl)
+})

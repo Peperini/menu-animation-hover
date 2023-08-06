@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "gsap": "^3.12.2",
     "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "locomotive-scroll": "^4.1.4"
   }
 }

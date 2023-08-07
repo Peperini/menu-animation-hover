@@ -1,4 +1,4 @@
-# Infinite Auto-Scroll Gallery
+# Menu Animation Hover Effect
 
 <!-- [![Website Preview](preview.png)](https://your-website-url.com) -->
 

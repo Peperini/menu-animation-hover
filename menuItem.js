@@ -1,12 +1,26 @@
 import gsap from 'gsap'
 import { map, lerp, clamp, getMousePos } from './utils'
-const images = Object.entries(require('/img/*.jpg'))
+// const images = Object.entries(require('/img/*.jpg'))
 
 let mousepos = { x: 0, y: 0 }
 let mousePosCache = mousepos
 let direction = { x: mousePosCache.x-mousepos.x, y: mousePosCache.y-mousepos.y }
 
 window.addEventListener('mousemove', event => mousepos = getMousePos(event))
+
+const importImages = async () => {
+    const imagePaths = [
+      '/img/1.jpg',
+      '/img/2.jpg',
+      '/img/3.jpg',
+      // Add more image paths here for all your images
+    ];
+  
+    const imageImports = imagePaths.map((path) => import(path));
+    return Promise.all(imageImports);
+}
+
+const images = await importImages()
 
 export default class MenuItem {
     constructor(el, inMenuPosition, animatableProperties) {
@@ -18,14 +32,14 @@ export default class MenuItem {
         this.initEvents();
     }
 
-    layout() {
+    async layout() {
         this.DOM.reveal = document.createElement('div');
         this.DOM.reveal.className = 'hover-reveal';
         this.DOM.revealInner = document.createElement('div');
         this.DOM.revealInner.className = 'hover-reveal__inner';
         this.DOM.revealImage = document.createElement('div');
         this.DOM.revealImage.className = 'hover-reveal__img';
-        this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition][1]})`;
+        this.DOM.revealImage.style.backgroundImage = `url(${images[this.inMenuPosition]?.default})`;
         this.DOM.revealInner.appendChild(this.DOM.revealImage);
         this.DOM.reveal.appendChild(this.DOM.revealInner);
         this.DOM.el.appendChild(this.DOM.reveal);

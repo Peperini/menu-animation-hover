@@ -8,7 +8,7 @@ Menu image hover animation created with GSAP and CSS for the Cercas Humaya websi
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/Peperini/menu-animation-hover.git`
+1. Clone the repository: `git clone https://github.com/peperini/menu-animation-hover.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 

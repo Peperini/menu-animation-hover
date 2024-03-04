@@ -4,6 +4,8 @@
 
 Menu image hover animation created with GSAP and CSS for the Cercas Humaya website that I had the opportunity to work on. This is made using GSAP animation library, CSS, HTML, JavaScript, and Vitejs.
 
+https://github.com/peperini/gsap-menu-animation-hover/assets/42049554/0f4566d6-ac61-4507-b1b2-146751273055
+
 ## Installation
 
 To run this project locally, follow these steps:
